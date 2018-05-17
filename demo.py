@@ -1,6 +1,7 @@
 import time
 
 from hand import Hand
+from utils.string_utils import accomodate_list_to_character_limit
 
 if __name__ == '__main__':
     print("Entered main")
@@ -10,16 +11,22 @@ if __name__ == '__main__':
 
     # usage demo
     lines = [
-        "Now this is a story all about how",
-        "My life got flipped turned upside down",
-        "And I'd like to take a minute, just sit right there",
-        "I'll tell you how I became the prince of a town called Bel-Air",
+        "What is Lorem Ipsum",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "Where does it come from?",
+        "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. ",
+        "What is Lorem Ipsum",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "Where does it come from?",
+        "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. ",
+        "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. ",
     ]
-    biases = [1.0 for i in lines]
-    styles = [7 for i in lines]
-    stroke_colors = ['black', 'black', 'black', 'black']
-    stroke_widths = [0.7, 0.7, 0.7, 0.7]
-    line_height = 20
+    lines = accomodate_list_to_character_limit(lines)
+    biases = [0.80 for i in lines]
+    styles = [8 for i in lines]
+    stroke_colors = ['black' for i in lines]
+    stroke_widths = [0.9 for i in lines]
+    line_height = 40
     view_width = 1000
 
     hand.write(
