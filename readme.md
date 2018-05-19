@@ -39,7 +39,7 @@ The following samples were generated using the forked project which was built on
 
 **All the credit for training of RNN and building of the model and everything else except some changes for better usabiliy should be given to  <a href="https://github.com/sjvasquez">sjvasquez</a>**.
 
-![](img/usage_demo.svg)
+![](img/usage_demo_2.svg)
 
 
 

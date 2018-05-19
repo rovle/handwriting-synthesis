@@ -30,7 +30,7 @@ if __name__ == '__main__':
     view_width = 1000
 
     hand.write(
-        filename='img/usage_demo.svg',
+        filename='img/usage_demo_2.svg',
         lines=lines,
         biases=biases,
         styles=styles,
