@@ -34,6 +34,15 @@ A pretrained model is included, but if you'd like to train your own, read <a hre
 ## Demonstrations
 Below are a few hundred samples from the model, including some samples demonstrating the effect of priming and biasing the model.  Loosely speaking, biasing controls the neatness of the samples and priming controls the style of the samples. The code for these demonstrations can be found in `ct83_demo.py`.
 
+### CT83 Fork Demo
+The following samples were generated using the forked project which was built on top of the author's original works. It included some code refactory, better customization options and ability to input complete paragraphs and move words which don't fit on the same line to the next line.
+
+**All the credit for training of RNN and building of the model and everything else except some changes for better usabiliy should be given to  <a href="https://github.com/sjvasquez">sjvasquez</a>**.
+
+![](img/usage_demo.svg)
+
+
+
 ### Demo #1:
 The following samples were generated with a fixed style and fixed bias.
 
