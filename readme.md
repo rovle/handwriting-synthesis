@@ -27,12 +27,12 @@ hand.write(
 ```
 ![](img/usage_demo.svg)
 
-Currently, the `Hand` class must be imported from `demo.py`.  If someone would like to package this project to make it more usable, please [contribute](#contribute).
+Currently, the `Hand` class must be imported from `ct83_demo.py`.  If someone would like to package this project to make it more usable, please [contribute](#contribute).
 
 A pretrained model is included, but if you'd like to train your own, read <a href='https://github.com/sjvasquez/handwriting-synthesis/tree/master/data/raw'>these instructions</a>.
 
 ## Demonstrations
-Below are a few hundred samples from the model, including some samples demonstrating the effect of priming and biasing the model.  Loosely speaking, biasing controls the neatness of the samples and priming controls the style of the samples. The code for these demonstrations can be found in `demo.py`.
+Below are a few hundred samples from the model, including some samples demonstrating the effect of priming and biasing the model.  Loosely speaking, biasing controls the neatness of the samples and priming controls the style of the samples. The code for these demonstrations can be found in `ct83_demo.py`.
 
 ### Demo #1:
 The following samples were generated with a fixed style and fixed bias.
