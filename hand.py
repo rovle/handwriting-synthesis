@@ -1,5 +1,6 @@
 import logging
 import os
+import time
 
 import numpy as np
 import svgwrite
@@ -57,11 +58,14 @@ class Hand(object):
                             "Valid character set is {}"
                         ).format(char, line_num, valid_char_set)
                     )
-
+        start_time_1 = time.time()
         strokes = self._sample(lines, biases=biases, styles=styles)
+        print("Time Taken for sample: ", (time.time() - start_time_1) / 60, " Minutes")
+        start_time_2 = time.time()
         self._draw(strokes, lines, filename, stroke_colors=stroke_colors,
                    stroke_widths=stroke_widths, line_height=line_height,
                    view_width=view_width, align_center=align_center)
+        print("Time Taken for draw: ", (time.time() - start_time_2) / 60, " Minutes")
 
     def _sample(self, lines, biases=None, styles=None):
         num_samples = len(lines)
