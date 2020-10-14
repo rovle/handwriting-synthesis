@@ -65,9 +65,10 @@ class Hand(object):
         num_of_pages = (len(lines)//lines_per_page) + 1
         for i in range(num_of_pages):
             lines_on_page = lines[(i*lines_per_page):((i+1)*lines_per_page)]
-            strokes = self._sample(lines_on_page, biases=biases, styles=styles)
-            self._draw(strokes, lines_on_page, filename + '_pg{}'.format(i) + '.svg', stroke_colors=stroke_colors,
-                       stroke_widths=stroke_widths, line_height=line_height,
+            strokes = self._sample(lines_on_page, biases=biases[(i*lines_per_page):((i+1)*lines_per_page)],
+                                   styles=styles[(i*lines_per_page):((i+1)*lines_per_page)])
+            self._draw(strokes, lines_on_page, filename + '_pg{}'.format(i) + '.svg', stroke_colors=stroke_colors[(i*lines_per_page):((i+1)*lines_per_page)],
+                       stroke_widths=stroke_widths[(i*lines_per_page):((i+1)*lines_per_page)], line_height=line_height,
                        view_width=view_width, align_center=align_center)
         print("Time Taken for draw: ", (time.time() - start_time_2) / 60, " Minutes")
 
