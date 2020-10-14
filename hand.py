@@ -39,7 +39,8 @@ class Hand(object):
         self.nn.restore()
 
     def write(self, filename, lines, biases=None, styles=None, stroke_colors=None,
-              stroke_widths=None, line_height=60, view_width=1000, align_center=True):
+              stroke_widths=None, line_height=60, view_width=1000, align_center=True,
+              lines_per_page=10):
         valid_char_set = set(drawing.alphabet)
         for line_num, line in enumerate(lines):
             if len(line) > 75:
@@ -62,9 +63,12 @@ class Hand(object):
         strokes = self._sample(lines, biases=biases, styles=styles)
         print("Time Taken for sample: ", (time.time() - start_time_1) / 60, " Minutes")
         start_time_2 = time.time()
-        self._draw(strokes, lines, filename, stroke_colors=stroke_colors,
-                   stroke_widths=stroke_widths, line_height=line_height,
-                   view_width=view_width, align_center=align_center)
+        num_of_pages = (len(lines)//lines_per_page) + 1
+        for i in range(num_of_pages):
+            lines_on_page = lines[(i*lines_per_page):((i+1)*lines_per_page)]
+            self._draw(strokes, lines_on_page, filename + '_pg{}'.format(i), stroke_colors=stroke_colors,
+                       stroke_widths=stroke_widths, line_height=line_height,
+                       view_width=view_width, align_center=align_center)
         print("Time Taken for draw: ", (time.time() - start_time_2) / 60, " Minutes")
 
     def _sample(self, lines, biases=None, styles=None):

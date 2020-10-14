@@ -7,7 +7,9 @@ from utils.string_utils import accomodate_list_to_character_limit
 
 
 
-def generate_handwriting(text, style=8, bias=0.8, strokes_width=0.9, line_height=40, view_width=2000, character_limit=75):
+def generate_handwriting(text, style=8, bias=0.8, strokes_width=0.9,
+                        line_height=40, view_width=2000, character_limit=75,
+                        lines_per_page=10):
     print("Started generating.")
     start_time = time.time()  # start time of the loop
 
@@ -31,7 +33,8 @@ def generate_handwriting(text, style=8, bias=0.8, strokes_width=0.9, line_height
         stroke_widths=stroke_widths,
         line_height=line_height,
         view_width=view_width,
-        align_center=False
+        align_center=False,
+        lines_per_page=lines_per_page
     )
 
     print("Time Taken: ", (time.time() - start_time) / 60, " Minutes")
