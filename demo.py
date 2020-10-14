@@ -25,7 +25,7 @@ def generate_handwriting(text, style=8, bias=0.8, strokes_width=0.9,
     stroke_colors = ['black' for i in lines]
     stroke_widths = [strokes_width for i in lines]
     hand.write(
-        filename='img/generiran_rukopis.svg',
+        filename='img/generiran_rukopis',
         lines=lines,
         biases=biases,
         styles=styles,

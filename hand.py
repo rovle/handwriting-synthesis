@@ -60,13 +60,13 @@ class Hand(object):
                         ).format(char, line_num, valid_char_set)
                     )
         start_time_1 = time.time()
-        strokes = self._sample(lines, biases=biases, styles=styles)
-        print("Time Taken for sample: ", (time.time() - start_time_1) / 60, " Minutes")
+        #print("Time Taken for sample: ", (time.time() - start_time_1) / 60, " Minutes")
         start_time_2 = time.time()
         num_of_pages = (len(lines)//lines_per_page) + 1
         for i in range(num_of_pages):
             lines_on_page = lines[(i*lines_per_page):((i+1)*lines_per_page)]
-            self._draw(strokes, lines_on_page, filename + '_pg{}'.format(i), stroke_colors=stroke_colors,
+            strokes = self._sample(lines_on_page, biases=biases, styles=styles)
+            self._draw(strokes, lines_on_page, filename + '_pg{}'.format(i) + '.svg', stroke_colors=stroke_colors,
                        stroke_widths=stroke_widths, line_height=line_height,
                        view_width=view_width, align_center=align_center)
         print("Time Taken for draw: ", (time.time() - start_time_2) / 60, " Minutes")
