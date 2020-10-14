@@ -1,8 +1,8 @@
-def accomodate_list_to_character_limit(lines):
+def accomodate_list_to_character_limit(lines, character_limit=75):
     global formatted_lines
     formatted_lines = []
 
-    def split_if_greater(line, character_limit=75):
+    def split_if_greater(line, character_limit=character_limit):
         global formatted_lines
         if len(line) > character_limit:
             # print("Input Line greater than ", character_limit,

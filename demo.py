@@ -7,7 +7,7 @@ from utils.string_utils import accomodate_list_to_character_limit
 
 
 
-def generate_handwriting(text, style=8, bias=0.8, strokes_width=0.9, line_height=40, view_width=1000):
+def generate_handwriting(text, style=8, bias=0.8, strokes_width=0.9, line_height=40, view_width=2000, character_limit=75):
     print("Started generating.")
     start_time = time.time()  # start time of the loop
 
@@ -17,7 +17,7 @@ def generate_handwriting(text, style=8, bias=0.8, strokes_width=0.9, line_height
     
     lines = text.split(sep='\n')
     lines = [x for x in lines if len(x) > 0]
-    lines = accomodate_list_to_character_limit(lines)
+    lines = accomodate_list_to_character_limit(lines, character_limit=character_limit)
     biases = [bias for i in lines]
     styles = [style for i in lines]
     stroke_colors = ['black' for i in lines]
